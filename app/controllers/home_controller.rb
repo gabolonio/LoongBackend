@@ -6,6 +6,7 @@ class HomeController < ApplicationController
 			render json: @allUsers
 		else
 			render json: {:status => 'error'}
+			return false
 		end
 
 	end
