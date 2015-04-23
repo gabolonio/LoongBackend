@@ -16,4 +16,14 @@ class Relation < ActiveRecord::Base
 		
 	end
 
+	def self.get(id)
+		curRelation = Relation.find(params[:id_register])
+		if !curRelation.nil?
+			return curRelation
+		else
+			render json: {status: 'error', cause: 'Relation not found'}
+			return false
+		end
+	end
+
 end
