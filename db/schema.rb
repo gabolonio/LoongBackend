@@ -14,14 +14,12 @@
 ActiveRecord::Schema.define(version: 20150419063952) do
 
   create_table "relations", force: :cascade do |t|
-    t.string   "url_i"
-    t.string   "url_o"
     t.integer  "father"
     t.integer  "son"
     t.float    "amount"
-    t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "state",      default: "wait"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "users", force: :cascade do |t|

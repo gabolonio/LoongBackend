@@ -3223,3 +3223,1844 @@ Processing by RailsAdmin::MainController#index as HTML
   Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (6.6ms)
   Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (4.5ms)
 Completed 200 OK in 10937ms (Views: 10930.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user/setUser" for ::1 at 2015-04-22 18:47:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#setUser as */*
+  Parameters: {"name"=>"everitoSan", "id_fb"=>"404587788785458"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1  [["fb_id", "404587788785458"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."fb_id" = '404587788785458' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("fb_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fb_id", "404587788785458"], ["name", "everitoSan"], ["created_at", "2015-04-22 23:47:13.442310"], ["updated_at", "2015-04-22 23:47:13.442310"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."fb_id" = '404587788785458' AND "users"."id" != 5) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 39ms (Views: 0.6ms | ActiveRecord: 2.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mDROP TABLE "relations"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url_i" varchar, "url_o" varchar, "father" integer, "son" integer, "amount" float, "state" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "relations"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url_i" varchar, "url_o" varchar, "father" integer, "son" integer, "amount" float, "state" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  DROP TABLE "users"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/admin/user" for ::1 at 2015-04-22 19:10:56 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"user"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (78.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (7.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (11.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (6.3ms)
+Completed 200 OK in 16549ms (Views: 16314.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 19:11:13 -0500
+
+
+Started GET "/admin/relation?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 19:11:20 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"relation"}
+  [1m[35mRelation Load (0.2ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (24.7ms)
+Completed 200 OK in 90ms (Views: 43.2ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/user/setUser" for ::1 at 2015-04-22 19:11:44 -0500
+Processing by UserController#setUser as */*
+  Parameters: {"name"=>"everitoSan", "id_fb"=>"404587788785458"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1  [["fb_id", "404587788785458"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."fb_id" = '404587788785458' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("fb_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fb_id", "404587788785458"], ["name", "everitoSan"], ["created_at", "2015-04-23 00:11:44.891287"], ["updated_at", "2015-04-23 00:11:44.891287"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."fb_id" = '404587788785458' AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 23ms (Views: 1.5ms | ActiveRecord: 4.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mDROP TABLE "relations"[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url_i" varchar, "url_o" varchar, "father" integer, "son" integer, "amount" float, "state" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "relations"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url_i" varchar, "url_o" varchar, "father" integer, "son" integer, "amount" float, "state" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  DROP TABLE "users"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/admin/relation" for ::1 at 2015-04-22 21:59:26 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"relation"}
+  [1m[35mRelation Load (0.3ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (40.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (88.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (91.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (4.1ms)
+Completed 200 OK in 717ms (Views: 698.2ms | ActiveRecord: 1.3ms)
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url_i" varchar, "url_o" varchar, "father" integer, "son" integer, "amount" float, "state" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150419063952')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150419063941')
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url_i" varchar, "url_o" varchar, "father" integer, "son" integer, "amount" float, "state" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150419063952')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150419063941')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/admin/relation" for ::1 at 2015-04-22 22:00:35 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"relation"}
+  [1m[35mRelation Load (0.2ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (16.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (5.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (3.3ms)
+Completed 200 OK in 437ms (Views: 432.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 22:00:35 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 22:00:36 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 22:00:36 -0500
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRelations (20150419063941)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "father" integer, "son" integer, "amount" float, "state" varchar DEFAULT 'wait', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150419063941"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateUsers (20150419063952)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150419063952"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (7.6ms)[0m  [1mDROP TABLE "relations"[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "father" integer, "son" integer, "amount" float, "state" varchar DEFAULT 'wait', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "father" integer, "son" integer, "amount" float, "state" varchar DEFAULT 'wait', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150419063952')
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150419063941')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/admin/relation" for ::1 at 2015-04-22 22:01:16 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"relation"}
+  [1m[35mRelation Load (0.3ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (19.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (7.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (4.5ms)
+Completed 200 OK in 497ms (Views: 482.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 22:01:17 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 22:01:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mDROP TABLE "relations"[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "father" integer, "son" integer, "amount" float, "state" varchar DEFAULT 'wait', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "relations"
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "father" integer, "son" integer, "amount" float, "state" varchar DEFAULT 'wait', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "users"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/admin/relation" for ::1 at 2015-04-22 22:01:58 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"relation"}
+  [1m[35mRelation Load (0.3ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (107.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (5.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (3.9ms)
+Completed 200 OK in 541ms (Views: 529.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 22:01:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 22:02:00 -0500
+
+
+Started GET "/admin/relation" for ::1 at 2015-04-22 22:02:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"relation"}
+  [1m[35mRelation Load (0.4ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (36.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (8.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (11.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (7.9ms)
+Completed 200 OK in 1579ms (Views: 1332.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 22:02:32 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 22:02:33 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 22:02:33 -0500
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "father" integer, "son" integer, "amount" float, "state" varchar DEFAULT 'wait', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150419063952')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150419063941')
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "father" integer, "son" integer, "amount" float, "state" varchar DEFAULT 'wait', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150419063952')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150419063941')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/admin/relation" for ::1 at 2015-04-22 22:04:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"relation"}
+  [1m[35mRelation Load (0.2ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (35.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (7.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (10.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (6.6ms)
+Completed 200 OK in 1471ms (Views: 1225.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 22:04:45 -0500
+
+
+Started GET "/admin/relation/new?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 22:07:49 -0500
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"relation"}
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (9.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (1.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_submit_buttons.html.haml (10.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (67.3ms)
+Completed 200 OK in 94ms (Views: 83.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/relation/new" for ::1 at 2015-04-22 22:07:55 -0500
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"model_name"=>"relation"}
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_submit_buttons.html.haml (1.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/application (14.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (6.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (5.6ms)
+Completed 200 OK in 524ms (Views: 516.7ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (7.5ms)[0m  [1mDROP TABLE "relations"[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "father" integer, "son" integer, "amount" float, "state" varchar DEFAULT 'wait', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "relations"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "father" integer, "son" integer, "amount" float, "state" varchar DEFAULT 'wait', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  DROP TABLE "users"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "fb_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/admin/relation/new" for ::1 at 2015-04-22 22:20:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"model_name"=>"relation"}
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (4.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_submit_buttons.html.haml (5.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/application (43.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (9.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (12.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (8.5ms)
+Completed 200 OK in 1883ms (Views: 1360.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 22:20:59 -0500
+
+
+Started GET "/admin/relation?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 22:21:14 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"relation"}
+  [1m[35mRelation Load (0.2ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (31.9ms)
+Completed 200 OK in 46ms (Views: 40.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/relation/new?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 22:21:15 -0500
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"relation"}
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_submit_buttons.html.haml (1.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (16.9ms)
+Completed 200 OK in 34ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/relation/new" for ::1 at 2015-04-22 22:22:08 -0500
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"model_name"=>"relation"}
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/_submit_buttons.html.haml (1.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/application (14.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (6.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (4.7ms)
+Completed 200 OK in 439ms (Views: 435.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 22:22:09 -0500
+
+
+Started GET "/home/getUsers" for ::1 at 2015-04-22 23:08:34 -0500
+Processing by HomeController#getUsers as */*
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"  ORDER BY "users"."id" ASC
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user/setUserAsParent" for ::1 at 2015-04-22 23:10:09 -0500
+Processing by UserController#setUserAsParent as */*
+  Parameters: {"name"=>"everitoSan", "fb_id"=>"404587788785458"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1[0m  [["fb_id", "404587788785458"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."fb_id" = '404587788785458' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("fb_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["fb_id", "404587788785458"], ["name", "everitoSan"], ["created_at", "2015-04-23 04:10:09.754168"], ["updated_at", "2015-04-23 04:10:09.754168"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."fb_id" = '404587788785458' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 35ms (Views: 0.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 23:14:44 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (31.5ms)
+Completed 200 OK in 53ms (Views: 43.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/user/1?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 23:14:48 -0500
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax (6.7ms)
+Completed 200 OK in 39ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/relation?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 23:14:51 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"relation"}
+  [1m[35mRelation Load (0.2ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (30.7ms)
+Completed 200 OK in 61ms (Views: 43.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 23:14:53 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (36.1ms)
+Completed 200 OK in 61ms (Views: 51.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/user/setUserAsChild" for ::1 at 2015-04-22 23:16:48 -0500
+Processing by UserController#setUserAsChild as */*
+  Parameters: {"name"=>"everitoSan", "fb_id_parent"=>"404587788785458", "fb_id"=>"4534534534534534"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1  [["fb_id", "404587788785458"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1[0m  [["fb_id", "4534534534534534"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."fb_id" = '4534534534534534' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("fb_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["fb_id", "4534534534534534"], ["name", "everitoSan"], ["created_at", "2015-04-23 04:16:48.300852"], ["updated_at", "2015-04-23 04:16:48.300852"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."fb_id" = '4534534534534534' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "relations" ("father", "son", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["father", 1], ["son", 2], ["amount", 0.0], ["created_at", "2015-04-23 04:16:48.308494"], ["updated_at", "2015-04-23 04:16:48.308494"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/admin/user" for ::1 at 2015-04-22 23:17:20 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"user"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (33.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (7.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (3.9ms)
+Completed 200 OK in 595ms (Views: 589.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 23:17:21 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 23:17:22 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 23:17:22 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 23:17:22 -0500
+
+
+Started GET "/admin/relation?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 23:17:23 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"relation"}
+  [1m[35mRelation Load (0.4ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (55.0ms)
+Completed 200 OK in 70ms (Views: 63.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/user/setUserAsChild" for ::1 at 2015-04-22 23:29:19 -0500
+Processing by UserController#setUserAsChild as */*
+  Parameters: {"name"=>"everitoSan", "fb_id_parent"=>"404587788785458", "fb_id"=>"4534534534534534"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1  [["fb_id", "404587788785458"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1[0m  [["fb_id", "4534534534534534"]]
+  [1m[35mRelation Load (0.1ms)[0m  SELECT  "relations".* FROM "relations" WHERE "relations"."father" = ? LIMIT 1  [["father", 2]]
+  [1m[36mRelation Load (0.1ms)[0m  [1mSELECT  "relations".* FROM "relations" WHERE "relations"."son" = ? LIMIT 1[0m  [["son", 2]]
+Completed 500 Internal Server Error in 24ms
+
+NoMethodError (undefined method `id' for ["{\"status\":\"error\",\"cause\":\"User is child\"}"]:Array):
+  app/controllers/user_controller.rb:12:in `setUserAsChild'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (23.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (51.1ms)
+
+
+Started GET "/admin/relation" for ::1 at 2015-04-22 23:30:30 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"relation"}
+  [1m[35mRelation Load (0.3ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (23.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/_navigation.html.haml (5.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/layouts/rails_admin/pjax.html.haml (3.9ms)
+Completed 200 OK in 497ms (Views: 489.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/rails_admin/rails_admin.self-81272f3e9ed4caa664067bbf9d0de26c57a13851c2e7b12508fb56d895ea434e.css?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery-ui/effect.self-ed20f2e37a1e647de0ef3e9bbe65a99380e2dd936d39d3d06145de97edae30ac.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-5b4e6e548c4b5d16d0d7b26c507d3e5abe0fbb814faedf11f73d4a597e7056e7.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-998833580e11979f6c2226a8910170c8f7d1ef49adc25c33adc7d31cd186220c.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-018c0a14cca97e1c030c519e8a65c4b819080cbd7f0a4810e3bab08698b25bec.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-3f6ef631c1f97b6d552af89b679344cfd849377d115abb96ddba1209ae921c86.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.self-aebfa594606a37fdeb4b8790e07e648cdc239e1b6e8883043154f5ff9803381b.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.self-a94e63b921cb381cccc0f06ce11de6b3815fd50dcf7335381b4abb595fbf9a39.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-20ebcd31d2587a788d8d16ca73520dbac16542505dd982fe506a8ca0555e88ca.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-3c2d93a245d26fe55b1ec9458902532822b4735ba62254b4f7f8a5048c57e11a.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-0c939a7d737f61d783b040c21858b568052fcb0da9c233a8ac0baf7e512e47c9.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-371a44b60c5d6bef4e2f47fccdaa1a12463e38a78dee28b2f07ac4e09f7ee6f3.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-b6d6b5dd78f3feb40904ef7bff9c016b783ea6d96d0e33887d4028714c783eeb.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-ea332f12901bb0ed9918b3c1a71512ccf55172d4dcc3f3eda94b7acffb709d93.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/ui.self-6fc2a81a6257015d1b07786613b4138b096dad26fcf4f971b70d2e48adcfa9a8.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/rails_admin/rails_admin.self-76f0a23ad5f8028895d20de39faa555dd2d46a6f5d1d6b03b546f9d0156372c5.js?body=1" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-04-22 23:30:31 -0500
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 23:30:33 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (56.4ms)
+Completed 200 OK in 69ms (Views: 63.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/relation?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2015-04-22 23:30:35 -0500
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"relation"}
+  [1m[35mRelation Load (0.2ms)[0m  SELECT  "relations".* FROM "relations"  ORDER BY relations.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relations"[0m
+  Rendered /Library/Ruby/Gems/2.0.0/gems/rails_admin-0.6.7/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (35.7ms)
+Completed 200 OK in 60ms (Views: 51.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user/setUserAsChild" for ::1 at 2015-04-22 23:35:59 -0500
+Processing by UserController#setUserAsChild as */*
+  Parameters: {"name"=>"everitoSan", "fb_id_parent"=>"404587788785458", "fb_id"=>"4534534534534534"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1  [["fb_id", "404587788785458"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1[0m  [["fb_id", "4534534534534534"]]
+  [1m[35mRelation Load (0.2ms)[0m  SELECT  "relations".* FROM "relations" WHERE "relations"."father" = ? LIMIT 1  [["father", 2]]
+  [1m[36mRelation Load (0.2ms)[0m  [1mSELECT  "relations".* FROM "relations" WHERE "relations"."son" = ? LIMIT 1[0m  [["son", 2]]
+Completed 500 Internal Server Error in 23ms
+
+NoMethodError (undefined method `id' for ["{\"status\":\"error\",\"cause\":\"User is child\"}"]:Array):
+  app/controllers/user_controller.rb:12:in `setUserAsChild'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (34.4ms)
+
+
+Started POST "/user/setUserAsChild" for ::1 at 2015-04-22 23:36:55 -0500
+Processing by UserController#setUserAsChild as */*
+  Parameters: {"name"=>"everitoSan", "fb_id_parent"=>"404587788785458", "fb_id"=>"4534534534534534"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1  [["fb_id", "404587788785458"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1[0m  [["fb_id", "4534534534534534"]]
+  [1m[35mRelation Load (0.2ms)[0m  SELECT  "relations".* FROM "relations" WHERE "relations"."father" = ? LIMIT 1  [["father", 2]]
+  [1m[36mRelation Load (0.1ms)[0m  [1mSELECT  "relations".* FROM "relations" WHERE "relations"."son" = ? LIMIT 1[0m  [["son", 2]]
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/user/setUserAsChild" for ::1 at 2015-04-22 23:37:45 -0500
+Processing by UserController#setUserAsChild as */*
+  Parameters: {"name"=>"everitoSan", "fb_id_parent"=>"4045875458", "fb_id"=>"4534534534534534"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."fb_id" = ? LIMIT 1  [["fb_id", "4045875458"]]
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.5ms)

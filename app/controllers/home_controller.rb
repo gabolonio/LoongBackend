@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
-	def home		
-		@allUsers = User.getUsers()
+	def getUsers		
+		@allUsers = User.get()
 		if @allUsers
 			render json: @allUsers
 		else

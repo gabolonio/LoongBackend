@@ -6,14 +6,14 @@ class User < ActiveRecord::Base
 			  presence: true,
 			  uniqueness: true
 
-	def self.getUsers
+	def self.get
 		return User.all().order(:id)
 	end
 
-	def self.set(id_fb, name)
-		currUser = User.find_or_create_by(fb_id: id_fb) do |user|
+	def self.set(fb_id, name)
+		currUser = User.find_or_create_by(fb_id: fb_id) do |user|
 				user.name = name
-				user.fb_id = id_fb
+				user.fb_id = fb_id
 				end
 		return currUser
 	end
